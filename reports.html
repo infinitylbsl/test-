@@ -274,18 +274,31 @@
   </div>
 </main>
 
-<footer style="background:var(--blue); color:white; padding:40px 20px; text-align:center;">
-    <div style="margin-bottom:20px;">
-        <h3 style="margin-bottom:15px; font-size:1.5em;">Connect with Us</h3>
-        <p>Follow us on social media for updates and news</p>
-        <div style="margin-top:10px;">
-            <a href="https://www.facebook.com/infinitylbsl/" target="_blank" style="margin:0 10px; color:white;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.733 0-1.325.592-1.325 1.325v21.351c0 .732.592 1.324 1.325 1.324h11.495v-9.294h-3.127v-3.622h3.127v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.794.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.732 0 1.324-.592 1.324-1.324v-21.35c0-.733-.592-1.325-1.324-1.325z" /></svg>
-            </a>
-            </div>
-    </div>
-    <p style="margin-top:20px;">© 2026 Infinity Laghubitta Bittiya Sanstha Ltd.</p>
-</footer>
+<!-- <script>
+  // This script fetches the navbar and handles the mobile toggle
+  function loadNavbar() {
+    fetch("navbar.html")
+      .then(response => {
+        if (!response.ok) throw new Error("Navbar file not found");
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+      })
+      .catch(err => console.error(err));
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById("navMenu");
+    if (nav) {
+      nav.classList.toggle("active");
+    }
+  }
+
+  // Run on page load
+  document.addEventListener("DOMContentLoaded", loadNavbar);
+</script> -->
+
 
 <script>
   // Load Navbar
@@ -348,4 +361,5 @@
 </script>
 
 </body>
+
 </html>
