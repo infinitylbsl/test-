@@ -1,0 +1,1128 @@
+<header>
+  <a href="index.html" class="logo-link">
+    <img src="logo111.png" class="logo" alt="Logo">
+  </a>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <div id="navbar-placeholder"></div>
+</header>
+
+<script>
+  // This script fetches the navbar and handles the mobile toggle
+  function loadNavbar() {
+    fetch("navbar.html")
+      .then(response => {
+        if (!response.ok) throw new Error("Navbar file not found");
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+      })
+      .catch(err => console.error(err));
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById("navMenu");
+    if (nav) {
+      nav.classList.toggle("active");
+    }
+  }
+
+  // Run on page load
+  document.addEventListener("DOMContentLoaded", loadNavbar);
+</script>
+
+
+
+<style>
+    /* RESET */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    /* COLORS */
+    :root {
+        --blue: #004080;
+        --green: #00a86b;
+        --white: #ffffff;
+    }
+
+    /* HEADER */
+    header {
+        background: var(--blue);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    nav {
+        display: flex;
+        gap: 15px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    /* MOBILE MENU */
+    @media(max-width:768px) {
+        nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: var(--blue);
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav.active {
+            display: flex;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+    }
+
+    /* HERO / PAGE TITLE */
+    .hero {
+        background: linear-gradient(to right, var(--blue), var(--green));
+        color: white;
+        text-align: center;
+        padding: 50px 20px;
+        animation: fadeIn 1s ease-in;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    /* TABS */
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        background: var(--white);
+        border-bottom: 3px solid var(--blue);
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .tab-button {
+        flex: 1;
+        padding: 15px;
+        cursor: pointer;
+        border: none;
+        background: var(--white);
+        font-weight: bold;
+        transition: 0.3s;
+        text-align: center;
+    }
+
+    .tab-button:hover {
+        background: var(--blue);
+        color: white;
+    }
+
+    .tab-button.active {
+        background: var(--blue);
+        color: white;
+    }
+
+    /* TAB CONTENT */
+    .tab-content {
+        display: none;
+        padding: 30px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        background: #f9f9f9;
+        border-radius: 10px;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    /* CEO IMAGE */
+    .ceo-img img {
+        width: 200px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    /* GO BACK BUTTON */
+    .go-back {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .go-back button {
+        padding: 10px 20px;
+        background: var(--blue);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+    <style>
+        /* NAVBAR STYLES */
+        header {
+            background: #004080;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            width: 140px;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 8px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #00a86b;
+            border-radius: 5px;
+        }
+
+        .login-btn {
+            background: #00a86b;
+            border: none;
+            padding: 6px 12px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* MOBILE */
+        @media(max-width:768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #004080;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            nav a {
+                padding: 12px;
+                display: block;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Add padding to body so content is below navbar */
+        body {
+            padding-top: 75px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("active");
+        }
+    </script>
+    <!-- NAVBAR END -->
+
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab-button active" data-tab="org">Our Organization</button>
+        <button class="tab-button" data-tab="ovm">Objective, Vision & Mission</button>
+        <button class="tab-button" data-tab="capital">Capital Structure</button>
+        <button class="tab-button" data-tab="board">Board of Directors</button>
+        <button class="tab-button" data-tab="ceo">Message from CEO</button>
+        <button class="tab-button" data-tab="management">Management Team</button>
+        <button class="tab-button" data-tab="support">Support Team</button>
+    </div>
+
+    <!-- TAB CONTENT -->
+    <div id="org" class="tab-content active">
+
+        <p><!-- ORGANIZATION PORTFOLIO -->
+        <section class="org-portfolio" style="padding:60px 20px; background:#f0f8ff; text-align:center;">
+            <h2 style="font-size:2.5em; color:#004080; margin-bottom:15px;">Organization Portfolio</h2>
+            <p style="font-size:1.2em; color:#00796b; margin-bottom:50px;">Your trusted partner in financial empowerment
+            </p>
+
+            <div class="portfolio-grid" style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+
+                <!-- Total Loan -->
+                <div class="portfolio-card"
+                    style="flex:1 1 200px; background:white; padding:30px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;">
+                    <h3 style="font-size:2em; color:#004080; margin-bottom:10px;">5.71 Arba</h3>
+                    <p style="font-size:1.1em; color:#00796b;">Total Loan</p>
+                </div>
+
+                <!-- Total Savings -->
+                <div class="portfolio-card"
+                    style="flex:1 1 200px; background:white; padding:30px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;">
+                    <h3 style="font-size:2em; color:#004080; margin-bottom:10px;">1.33 Arba</h3>
+                    <p style="font-size:1.1em; color:#00796b;">Total Savings</p>
+                </div>
+
+                <!-- Total Centers -->
+                <div class="portfolio-card"
+                    style="flex:1 1 200px; background:white; padding:30px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;">
+                    <h3 style="font-size:2em; color:#004080; margin-bottom:10px;">9,604</h3>
+                    <p style="font-size:1.1em; color:#00796b;">Total Centers</p>
+                </div>
+
+                <!-- Total Members -->
+                <div class="portfolio-card"
+                    style="flex:1 1 200px; background:white; padding:30px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;">
+                    <h3 style="font-size:2em; color:#004080; margin-bottom:10px;">1,05,820</h3>
+                    <p style="font-size:1.1em; color:#00796b;">Total Members</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Optional Hover Effect -->
+        <style>
+            .portfolio-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            @media(max-width:768px) {
+                .portfolio-grid {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+            }
+        </style>
+        </p>
+    </div>
+
+
+
+
+
+
+    <div id="ovm" class="tab-content">
+
+        <p><!-- OBJECTIVE, VISION, MISSION & GOALS -->
+        <section class="org-ovmg" style="padding:60px 20px; background:#ffffff; text-align:center;">
+            <h2 style="font-size:2.5em; color:#004080; margin-bottom:15px;">Our Purpose</h2>
+            <p style="font-size:1.2em; color:#00796b; margin-bottom:50px;">Building financial empowerment and social
+                development across Nepal</p>
+
+            <div class="ovmg-grid" style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+
+                <!-- Objective -->
+                <div class="ovmg-card"
+                    style="flex:1 1 300px; background:#f0f8ff; padding:30px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;">
+                    <h3 style="color:#004080; margin-bottom:15px;">Objective</h3>
+                    <p style="color:#333; text-align:left; line-height:1.6;">
+                        ILBSL aims to empower Nepal’s underserved communities by fostering self-reliance and
+                        independence, contributing to rural social development through self-employment and enhanced
+                        social awareness.
+                    </p>
+                </div>
+
+                <!-- Vision -->
+                <div class="ovmg-card"
+                    style="flex:1 1 300px; background:#f0f8ff; padding:30px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;">
+                    <h3 style="color:#004080; margin-bottom:15px;">Vision</h3>
+                    <p style="color:#333; text-align:left; line-height:1.6;">
+                        To build a sustainable and inclusive society by promoting economic independence among Nepal’s
+                        marginalized populations, primarily through self-employment and social empowerment.
+                    </p>
+                </div>
+
+                <!-- Mission -->
+                <div class="ovmg-card"
+                    style="flex:1 1 300px; background:#f0f8ff; padding:30px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;">
+                    <h3 style="color:#004080; margin-bottom:15px;">Mission</h3>
+                    <p style="color:#333; text-align:left; line-height:1.6;">
+                        To provide sustainable microfinance services to needy and underserved families across Nepal,
+                        supporting their journey toward financial stability and growth.
+                    </p>
+                </div>
+
+                <!-- Goals -->
+                <div class="ovmg-card"
+                    style="flex:1 1 300px; background:#f0f8ff; padding:30px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;">
+                    <h3 style="color:#004080; margin-bottom:15px;">Goals</h3>
+                    <ul style="color:#333; text-align:left; line-height:1.6; padding-left:20px;">
+                        <li><strong>Empower Deprived Households:</strong> Reach the maximum number of financially
+                            capable households using proven delivery mechanisms and technology-driven solutions.</li>
+                        <li><strong>Institutional Excellence:</strong> Build a well-managed, reputable organization with
+                            motivated staff committed to achieving organizational objectives.</li>
+                        <li><strong>Formalize the Informal Financial Sector:</strong> Educate individuals currently
+                            outside the banking system and equip them to perform formal banking transactions.</li>
+                        <li><strong>Promote Financial Literacy and Inclusion:</strong> Enhance access to banking
+                            services for marginalized and backward communities.</li>
+                        <li><strong>Support Entrepreneurship:</strong> Encourage and assist marginalized individuals in
+                            establishing Small and Medium Enterprises (SMEs) to achieve economic independence.</li>
+                        <li><strong>Strengthen Rural Economies:</strong> Empower rural communities with financial
+                            guidance, enabling them to initiate enterprises and generate sustainable income.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Hover effect and responsive -->
+        <style>
+            .ovmg-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            @media(max-width:768px) {
+                .ovmg-grid {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+            }
+        </style>
+        </p>
+    </div>
+
+
+    <div id="capital" class="tab-content">
+        <!-- CAPITAL STRUCTURE SECTION START -->
+        <section
+            style="padding:50px 20px; max-width:1200px; margin:0 auto; background:#f0f8ff; border-radius:12px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+
+            <h2 style="font-size:2.5em; color:#004080; margin-bottom:15px;">Capital Structure</h2>
+            <p style="font-size:1.2em; color:#00796b; margin-bottom:40px;">
+                Infinity Laghubitta Bittiya Sanstha Ltd. has a strong and transparent capital base to support its
+                operations and growth across Nepal.
+            </p>
+
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+
+                <!-- Authorized Capital -->
+                <div
+                    style="flex:1 1 250px; background:white; padding:25px 15px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; text-align:center;">
+                    <h3 style="font-size:2em; color:#004080; margin-bottom:10px;">Rs. 700 Million</h3>
+                    <p style="color:#00796b; font-weight:bold;">Authorized Capital</p>
+                </div>
+
+                <!-- Issued Capital -->
+                <div
+                    style="flex:1 1 250px; background:white; padding:25px 15px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; text-align:center;">
+                    <h3 style="font-size:2em; color:#004080; margin-bottom:10px;">Rs. 497.41 Million</h3>
+                    <p style="color:#00796b; font-weight:bold;">Issued Capital</p>
+                </div>
+
+                <!-- Paid-up Capital -->
+                <div
+                    style="flex:1 1 250px; background:white; padding:25px 15px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; text-align:center;">
+                    <h3 style="font-size:2em; color:#004080; margin-bottom:10px;">Rs. 497.41 Million</h3>
+                    <p style="color:#00796b; font-weight:bold;">Paid-up Capital</p>
+                </div>
+
+            </div>
+
+            <!-- Ownership Info -->
+            <div
+                style="margin-top:50px; display:flex; flex-wrap:wrap; justify-content:center; gap:30px; text-align:left;">
+
+                <!-- Group A -->
+                <div
+                    style="flex:1 1 300px; background:#004080; color:white; padding:25px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;">
+                    <h3 style="margin-bottom:15px; font-size:1.5em;">Group A: Promoters</h3>
+                    <p style="line-height:1.6;">
+                        112 diverse promoters from across the country hold <strong>67.5%</strong> of the shares. They
+                        represent multiple occupations and backgrounds, ensuring strong governance and expertise.
+                    </p>
+                </div>
+
+                <!-- Group B -->
+                <div
+                    style="flex:1 1 300px; background:#00a86b; color:white; padding:25px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;">
+                    <h3 style="margin-bottom:15px; font-size:1.5em;">Group B: Public</h3>
+                    <p style="line-height:1.6;">
+                        The remaining <strong>32.5%</strong> of shares are issued to the public, giving everyone an
+                        opportunity to be part of our growth and mission.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Optional Hover Effect -->
+        <style>
+            section div:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                transition: 0.3s;
+            }
+
+            @media(max-width:768px) {
+                section div {
+                    flex: 1 1 100% !important;
+                }
+            }
+        </style>
+        <!-- CAPITAL STRUCTURE SECTION END -->
+    </div>
+
+    <div id="board" class="tab-content">
+        <!-- BOARD OF DIRECTORS SECTION START -->
+        <section
+            style="padding:50px 20px; max-width:1200px; margin:0 auto; background:#f9f9f9; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); text-align:center;">
+
+            <h2 style="font-size:2.5em; color:#004080; margin-bottom:20px;">Board of Directors</h2>
+            <p style="font-size:1.2em; color:#00796b; margin-bottom:40px;">
+                Our Board of Directors is comprised of experienced professionals from diverse backgrounds, guiding
+                Infinity Laghubitta towards excellence in governance and sustainable growth.
+            </p>
+
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+
+                <!-- Director Card Template -->
+                <div
+                    style="flex:1 1 300px; background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; text-align:left;">
+                    <div style="text-align:center; margin-bottom:15px;">
+                        <img src="bishnu-kumar.jpg" alt="Mr. Bishnu Kumar Ghimire"
+                            style="width:150px; height:150px; object-fit:cover; border-radius:50%;">
+                    </div>
+                    <h3 style="color:#004080; margin-bottom:5px;">Mr. Bishnu Kumar Ghimire</h3>
+                    <h4 style="color:#00796b; margin-bottom:10px; font-weight:normal;">Chairman</h4>
+                    <p style="font-size:0.95em; line-height:1.6; color:#333;">
+                        M.A, M.Ed., B.L from Tribhuvan University.<br>
+                        Founder principal, writer, translator, and social worker.<br>
+                        Joined: Poush 30, 2082
+                    </p>
+                </div>
+
+                <div
+                    style="flex:1 1 300px; background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; text-align:left;">
+                    <div style="text-align:center; margin-bottom:15px;">
+                        <img src="ram-krishna.jpg" alt="Mr. Ram Krishna Dangol"
+                            style="width:150px; height:150px; object-fit:cover; border-radius:50%;">
+                    </div>
+                    <h3 style="color:#004080; margin-bottom:5px;">Mr. Ram Krishna Dangol</h3>
+                    <h4 style="color:#00796b; margin-bottom:10px; font-weight:normal;">Director</h4>
+                    <p style="font-size:0.95em; line-height:1.6; color:#333;">
+                        Bachelor’s in Business Administration from Tribhuvan University.<br>
+                        Managing Director of Emkay Apartment Guest House with experience in hospitality.<br>
+                        Joined: Poush 30, 2082
+                    </p>
+                </div>
+
+                <div
+                    style="flex:1 1 300px; background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; text-align:left;">
+                    <div style="text-align:center; margin-bottom:15px;">
+                        <img src="ramesh-kumar.jpg" alt="Mr. Ramesh Kumar Karmacharya"
+                            style="width:150px; height:150px; object-fit:cover; border-radius:50%;">
+                    </div>
+                    <h3 style="color:#004080; margin-bottom:5px;">Mr. Ramesh Kumar Karmacharya</h3>
+                    <h4 style="color:#00796b; margin-bottom:10px; font-weight:normal;">Director</h4>
+                    <p style="font-size:0.95em; line-height:1.6; color:#333;">
+                        Bachelor’s in Commerce with over 20 years of business experience.<br>
+                        Joined: Poush 30, 2082
+                    </p>
+                </div>
+
+                <div
+                    style="flex:1 1 300px; background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; text-align:left;">
+                    <div style="text-align:center; margin-bottom:15px;">
+                        <img src="shashi-timalsina.jpg" alt="Advocate Shashi Timalsina"
+                            style="width:150px; height:150px; object-fit:cover; border-radius:50%;">
+                    </div>
+                    <h3 style="color:#004080; margin-bottom:5px;">Advocate Shashi Timalsina</h3>
+                    <h4 style="color:#00796b; margin-bottom:10px; font-weight:normal;">Director</h4>
+                    <p style="font-size:0.95em; line-height:1.6; color:#333;">
+                        Master’s in Rural Development from Tribhuvan University and Bachelor of Law from Nepal Law
+                        Campus.<br>
+                        13 years of experience in the financial sector.<br>
+                        Joined: Poush 30, 2082
+                    </p>
+                </div>
+
+                <div
+                    style="flex:1 1 300px; background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; text-align:left;">
+                    <div style="text-align:center; margin-bottom:15px;">
+                        <img src="prava-khanal.jpg" alt="Mrs. Prava Khanal"
+                            style="width:150px; height:150px; object-fit:cover; border-radius:50%;">
+                    </div>
+                    <h3 style="color:#004080; margin-bottom:5px;">Mrs. Prava Khanal</h3>
+                    <h4 style="color:#00796b; margin-bottom:10px; font-weight:normal;">Director</h4>
+                    <p style="font-size:0.95em; line-height:1.6; color:#333;">
+                        Bachelor’s in Business Studies from Tribhuvan University.<br>
+                        Business owner with teaching experience.<br>
+                        Joined: Poush 28, 2080
+                    </p>
+                </div>
+
+                <div
+                    style="flex:1 1 300px; background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; text-align:left;">
+                    <div style="text-align:center; margin-bottom:15px;">
+                        <img src="maheshwar-joshi.jpg" alt="Mr. Maheshwar Prasad Joshi"
+                            style="width:150px; height:150px; object-fit:cover; border-radius:50%;">
+                    </div>
+                    <h3 style="color:#004080; margin-bottom:5px;">Mr. Maheshwar Prasad Joshi</h3>
+                    <h4 style="color:#00796b; margin-bottom:10px; font-weight:normal;">Independent Director</h4>
+                    <p style="font-size:0.95em; line-height:1.6; color:#333;">
+                        Master’s in Humanities and Diploma in Law from Tribhuvan University.<br>
+                        Over 37 years of experience in the banking sector.<br>
+                        Joined: Ashoj 7, 2079
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Optional hover effect -->
+        <style>
+            section div:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                transition: 0.3s;
+            }
+
+            @media(max-width:768px) {
+                section div {
+                    flex: 1 1 100% !important;
+                }
+            }
+        </style>
+        <!-- BOARD OF DIRECTORS SECTION END -->
+    </div>
+
+
+
+
+
+    <div id="ceo" class="tab-content">
+        <!-- MESSAGE FROM CEO START -->
+        <div
+            style="padding:50px 20px; max-width:900px; margin:40px auto; background:linear-gradient(135deg, #004080, #00a86b); border-radius:15px; color:white; box-shadow:0 8px 25px rgba(0,0,0,0.2);">
+
+            <!-- CEO Image -->
+            <div style="text-align:center; margin-bottom:30px;">
+                <img src="ceo-sir.jpg" alt="Gyanishor Panta - CEO"
+                    style="width:220px; height:auto; max-height:300px; object-fit:contain; border-radius:12px; border:3px solid white;">
+            </div>
+
+            <!-- CEO Name & Title -->
+            <h3 style="text-align:center; margin-bottom:5px; font-size:1.8em;">Gyanishor Panta</h3>
+            <h4 style="text-align:center; margin-bottom:30px; font-weight:normal; font-size:1.2em;">Chief Executive
+                Officer</h4>
+
+            <!-- CEO Message -->
+            <div style="font-size:1em; line-height:1.7; text-align:justify; color:white;">
+
+                <p><strong>At Infinity Laghubitta Bittiya Sanstha Limited (ILBSL)</strong>, our mission is clear: to
+                    bridge the gap in financial inclusion for Nepal’s rural and marginalized communities. In an era
+                    defined by global economic shifts and local regulatory evolution, ILBSL remains a steadfast partner
+                    in fostering economic stability and livelihood enhancement.</p>
+
+                <h4 style="margin-top:25px; font-size:1.2em;">Navigating Challenges with Innovation</h4>
+                <p>The microfinance landscape currently faces unique pressures from inflationary trends to a shifting
+                    regulatory environment. At ILBSL, we view these challenges as catalysts for strategic
+                    transformation. We are prioritizing digitization through mobile banking and digital lending to
+                    ensure our services are seamless, cost-effective, and accessible to all.</p>
+
+                <h4 style="margin-top:25px; font-size:1.2em;">Commitment to Sustainable Growth</h4>
+                <p>Our strategy is built on three core pillars:</p>
+                <ul style="margin-left:20px; line-height:1.6;">
+                    <li><strong>Digital Excellence:</strong> Leveraging technology to enhance operational resilience and
+                        client experience.</li>
+                    <li><strong>ESG Integration:</strong> Embedding Environmental, Social, and Governance principles
+                        into our core operations for long-term value creation.</li>
+                    <li><strong>Talent Development:</strong> Investing in a skilled, empowered workforce to lead the
+                        sector forward.</li>
+                </ul>
+
+                <h4 style="margin-top:25px; font-size:1.2em;">A Future of Empowerment</h4>
+                <p>As we expand our customer-centric products and strengthen our national branch network, I extend my
+                    deepest gratitude to the Government of Nepal, Nepal Rastra Bank, our Board of Directors, and our
+                    dedicated staff.</p>
+
+                <p>As CEO, I am honored to lead ILBSL into this next chapter. Together, we are creating pathways to
+                    lasting prosperity and empowering communities across Nepal.</p>
+
+            </div>
+
+        </div>
+        <!-- MESSAGE FROM CEO END -->
+    </div>
+
+
+
+    <div id="management" class="tab-content">
+
+        <!-- MANAGEMENT TEAM START -->
+        <div style="padding:50px 20px; max-width:1000px; margin:40px auto;">
+
+            <h2 style="text-align:center; margin-bottom:40px; color:#004080;">Management Team</h2>
+
+            <!-- FIRST ROW - CEO -->
+            <div style="display:flex; justify-content:center; margin-bottom:30px;">
+                <div
+                    style="flex:1 1 250px; max-width:300px; background:#f0f8ff; border-radius:12px; padding:20px; box-shadow:0 6px 15px rgba(0,0,0,0.1); text-align:center;">
+                    <img src="ceo.jpg" alt="Gyanishor Panta"
+                        style="width:150px; height:150px; object-fit:cover; border-radius:50%; margin-bottom:15px; border:3px solid #004080;">
+                    <h3 style="margin-bottom:5px; font-size:1.2em; color:#004080;">Gyanishor Panta</h3>
+                    <h4 style="margin-bottom:10px; font-weight:normal; font-size:1em; color:#00796b;">Chief Executive
+                        Officer</h4>
+                </div>
+            </div>
+
+            <!-- SECOND ROW - TWO CARDS -->
+            <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-bottom:30px;">
+                <div
+                    style="flex:1 1 250px; max-width:300px; background:#f0f8ff; border-radius:12px; padding:20px; box-shadow:0 6px 15px rgba(0,0,0,0.1); text-align:center;">
+                    <img src="krishna-prasad.jpg" alt="Krishna Prasad Khanal"
+                        style="width:150px; height:150px; object-fit:cover; border-radius:50%; margin-bottom:15px; border:3px solid #004080;">
+                    <h3 style="margin-bottom:5px; font-size:1.2em; color:#004080;">Krishna Prasad Khanal</h3>
+                    <h4 style="margin-bottom:10px; font-weight:normal; font-size:1em; color:#00796b;">Head of Internal
+                        Audit Department</h4>
+                </div>
+
+                <div
+                    style="flex:1 1 250px; max-width:300px; background:#f0f8ff; border-radius:12px; padding:20px; box-shadow:0 6px 15px rgba(0,0,0,0.1); text-align:center;">
+                    <img src="amarnath-sedhai.jpg" alt="Amarnath Sedhai"
+                        style="width:150px; height:150px; object-fit:cover; border-radius:50%; margin-bottom:15px; border:3px solid #004080;">
+                    <h3 style="margin-bottom:5px; font-size:1.2em; color:#004080;">Amarnath Sedhai</h3>
+                    <h4 style="margin-bottom:10px; font-weight:normal; font-size:1em; color:#00796b;">Head of Credit
+                        Department</h4>
+                </div>
+            </div>
+
+            <!-- THIRD ROW - THREE CARDS -->
+            <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+                <div
+                    style="flex:1 1 250px; max-width:300px; background:#f0f8ff; border-radius:12px; padding:20px; box-shadow:0 6px 15px rgba(0,0,0,0.1); text-align:center;">
+                    <img src="subash-gupta.jpg" alt="Subash Kumar Gupta"
+                        style="width:150px; height:150px; object-fit:cover; border-radius:50%; margin-bottom:15px; border:3px solid #004080;">
+                    <h3 style="margin-bottom:5px; font-size:1.2em; color:#004080;">Subash Kumar Gupta</h3>
+                    <h4 style="margin-bottom:10px; font-weight:normal; font-size:1em; color:#00796b;">Head of IT
+                        Department</h4>
+                </div>
+
+                <div
+                    style="flex:1 1 250px; max-width:300px; background:#f0f8ff; border-radius:12px; padding:20px; box-shadow:0 6px 15px rgba(0,0,0,0.1); text-align:center;">
+                    <img src="kushal-khanal.jpg" alt="Kushal Khanal"
+                        style="width:150px; height:150px; object-fit:cover; border-radius:50%; margin-bottom:15px; border:3px solid #004080;">
+                    <h3 style="margin-bottom:5px; font-size:1.2em; color:#004080;">Kushal Khanal</h3>
+                    <h4 style="margin-bottom:10px; font-weight:normal; font-size:1em; color:#00796b;">Head of
+                        Recovery/Monitoring Department</h4>
+                </div>
+
+                <div
+                    style="flex:1 1 250px; max-width:300px; background:#f0f8ff; border-radius:12px; padding:20px; box-shadow:0 6px 15px rgba(0,0,0,0.1); text-align:center;">
+                    <img src="ritu-baniya.jpg" alt="Ritu Baniya"
+                        style="width:150px; height:150px; object-fit:cover; border-radius:50%; margin-bottom:15px; border:3px solid #004080;">
+                    <h3 style="margin-bottom:5px; font-size:1.2em; color:#004080;">Ritu Baniya</h3>
+                    <h4 style="margin-bottom:10px; font-weight:normal; font-size:1em; color:#00796b;">Head of
+                        Finance/Operation Department</h4>
+                </div>
+            </div>
+
+        </div>
+        <!-- MANAGEMENT TEAM END -->
+
+    </div>
+
+
+
+
+    <div id="support" class="tab-content">
+
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <title>Support Team</title>
+            <style>
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    background-color: #f4f6f8;
+                    color: #333;
+                    margin: 20px;
+                }
+
+                .grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 20px;
+                }
+
+                .department {
+                    background-color: #ffffff;
+                    border-radius: 15px;
+                    padding: 20px;
+                    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+                    transition: transform 0.3s, box-shadow 0.3s;
+                }
+
+                .department:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+                }
+
+                .department h2 {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.5rem;
+                    border-bottom: 2px solid #e0e0e0;
+                    padding-bottom: 10px;
+                    margin-bottom: 15px;
+                }
+
+                .department h2 img {
+                    height: 40px;
+                    width: 40px;
+                    margin-right: 12px;
+                }
+
+                .member {
+                    margin-bottom: 12px;
+                    padding: 10px;
+                    border-left: 3px solid #4CAF50;
+                    background-color: #f9f9f9;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                }
+
+                .member:hover {
+                    background-color: #e6f2ff;
+                }
+
+                .member strong {
+                    color: #007BFF;
+                }
+
+                .member p {
+                    margin: 4px 0;
+                }
+            </style>
+        </head>
+
+        <body>
+
+            <div class="grid">
+                <!-- IT Department -->
+                <div class="department">
+                    <h2><img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="IT Logo"> IT Department
+                    </h2>
+                    <div class="member">
+                        <strong>Prabin Kafle</strong><br>
+                        Contact: 078-503301 Ext-109<br>
+                        Email: prabin.kafle@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Susmita Adhikari</strong><br>
+                        Contact: 078-503301 Ext-107<br>
+                        Email: susmita.adhikari@infinitylbsl.com.np
+                    </div>
+                </div>
+
+                <!-- Finance Department -->
+                <div class="department">
+                    <h2><img src="https://cdn-icons-png.flaticon.com/512/2950/2950225.png" alt="Finance Logo"> Finance
+                        Department</h2>
+                    <div class="member">
+                        <strong>Padam Raj Sigdel</strong><br>
+                        Contact: 078-503301 Ext-126<br>
+                        Email: padam.sigdel@infnitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Dhiraj Chaudhary</strong><br>
+                        Contact: 078-503301 Ext-102<br>
+                        Email: dhiraj.chaudhary@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Kamala Acharya</strong><br>
+                        Contact: 078-503301 Ext-103<br>
+                        Email: kamala.acharya@infinitylbsl.com.np
+                    </div>
+                </div>
+
+                <!-- Operation Department -->
+                <div class="department">
+                    <h2><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Operation Logo">
+                        Operation Department</h2>
+                    <div class="member">
+                        <strong>Padam Raj Sigdel</strong><br>
+                        Contact: 078-503301 Ext-126<br>
+                        Email: padam.sigdel@infnitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Krishna Poudel</strong><br>
+                        Contact: 078-503301 Ext-105<br>
+                        Email: krishna.poudel@infinitylbsl.com.np
+                    </div>
+                </div>
+
+                <!-- Credit Department -->
+                <div class="department">
+                    <h2><img src="https://cdn-icons-png.flaticon.com/512/2331/2331970.png" alt="Credit Logo"> Credit
+                        Department</h2>
+                    <div class="member">
+                        <strong>Madhu Krishna Neupane</strong><br>
+                        Contact: 078-503301 Ext-111<br>
+                        Email: madhu.neupane@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Parbati Kunwar</strong><br>
+                        Contact: 078-503301 Ext-114<br>
+                        Email: parbati.kunwar@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Smritee Pandey</strong><br>
+                        Contact: 078-503301 Ext-126<br>
+                        Email: smritee.pandey@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Pramila Subedi</strong><br>
+                        Contact: 078-503301 Ext-114<br>
+                        Email: pramila.subedi@infinitylbsl.com.np
+                    </div>
+                </div>
+
+                <!-- HR Department -->
+                <div class="department">
+                    <h2><img src="https://cdn-icons-png.flaticon.com/512/3135/3135710.png" alt="HR Logo"> HR Department
+                    </h2>
+                    <div class="member">
+                        <strong>Prakash Shrestha (Unit Head)</strong><br>
+                        Contact: 078-503301 Ext-122<br>
+                        Email: prakash.shrestha@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Sarita Kumari Bista</strong><br>
+                        Contact: 078-503301 Ext-119<br>
+                        Email: sarita.bista@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Mun Prasad Devkota</strong><br>
+                        Contact: 9855047838<br>
+                        Email: mun.devkota@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Kala Nepal</strong><br>
+                        Contact: 078-503301<br>
+                        Email: kala.nepal@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Mahesh Bhattarai</strong><br>
+                        Contact: 078-503301<br>
+                        Email: info@infinitylbsl.com.np
+                    </div>
+                </div>
+
+                <!-- Monitoring & Recovery Department -->
+                <div class="department">
+                    <h2><img src="https://cdn-icons-png.flaticon.com/512/2910/2910763.png" alt="Monitoring Logo">
+                        Monitoring & Recovery Department</h2>
+                    <div class="member">
+                        <strong>Bishnu Basyal (Unit Head)</strong><br>
+                        Contact: 078-503301 Ext-124<br>
+                        Email: bishnu.basyal@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Usha Shrestha</strong><br>
+                        Contact: 078-503301 Ext-128<br>
+                        Email: usha.shrestha@infinitylbsl.com.np
+                    </div>
+                    <div class="member">
+                        <strong>Sudika Thapa</strong><br>
+                        Contact: 078-503301 Ext-106<br>
+                        Email: sudika.thapa@infinitylbsl.com.np
+                    </div>
+                </div>
+            </div>
+
+
+
+        </body>
+
+        </html>
+    </div>
+
+    <!-- Go Back Button -->
+    <div class="go-back">
+        <button onclick="history.back()">← Go Back</button>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("active");
+        }
+
+        // Tabs functionality
+        const tabs = document.querySelectorAll('.tab-button');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+
+    <!-- FOOTER -->
+    <footer style="background:var(--blue); color:white; padding:40px 20px; text-align:center;">
+
+        <!-- Connect Section -->
+        <div style="margin-bottom:20px;">
+            <h3 style="margin-bottom:15px; font-size:1.5em;">Connect with Us</h3>
+            <p>Follow us on social media for updates and news</p>
+
+            <!-- Social Media Icons -->
+            <div style="margin-top:10px;">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/infinitylbsl/" target="_blank" style="margin:0 10px; color:white;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+                        <path
+                            d="M22.675 0h-21.35c-.733 0-1.325.592-1.325 1.325v21.351c0 .732.592 1.324 1.325 1.324h11.495v-9.294h-3.127v-3.622h3.127v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.794.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.732 0 1.324-.592 1.324-1.324v-21.35c0-.733-.592-1.325-1.324-1.325z" />
+                    </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/infinitylbsl/" target="_blank" style="margin:0 10px; color:white;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.428.403a4.92 4.92 0 0 1 1.79 1.07 4.92 4.92 0 0 1 1.07 1.79c.163.458.35 1.258.403 2.428.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.428a4.92 4.92 0 0 1-1.07 1.79 4.92 4.92 0 0 1-1.79 1.07c-.458.163-1.258.35-2.428.403-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.428-.403a4.92 4.92 0 0 1-1.79-1.07 4.92 4.92 0 0 1-1.07-1.79c-.163-.458-.35-1.258-.403-2.428-.058-1.266-.069-1.646-.069-4.85s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.428a4.92 4.92 0 0 1 1.07-1.79 4.92 4.92 0 0 1 1.79-1.07c.458-.163 1.258-.35 2.428-.403 1.266-.058 1.646-.069 4.85-.069zm0-2.163c-3.257 0-3.667.012-4.947.071-1.279.059-2.15.25-2.905.53a6.918 6.918 0 0 0-2.506 1.63 6.918 6.918 0 0 0-1.63 2.506c-.28.755-.471 1.626-.53 2.905-.059 1.28-.071 1.69-.071 4.947s.012 3.667.071 4.947c.059 1.279.25 2.15.53 2.905a6.918 6.918 0 0 0 1.63 2.506 6.918 6.918 0 0 0 2.506 1.63c.755.28 1.626.471 2.905.53 1.28.059 1.69.071 4.947.071s3.667-.012 4.947-.071c1.279-.059 2.15-.25 2.905-.53a6.918 6.918 0 0 0 2.506-1.63 6.918 6.918 0 0 0 1.63-2.506c.28-.755.471-1.626.53-2.905.059-1.28.071-1.69.071-4.947s-.012-3.667-.071-4.947c-.059-1.279-.25-2.15-.53-2.905a6.918 6.918 0 0 0-1.63-2.506 6.918 6.918 0 0 0-2.506-1.63c-.755-.28-1.626-.471-2.905-.53-1.28-.059-1.69-.071-4.947-.071zM12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                    </svg>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/company/infinitylbsl/" target="_blank"
+                    style="margin:0 10px; color:white;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+                        <path
+                            d="M22.225 0h-20.451c-.977 0-1.774.797-1.774 1.774v20.451c0 .977.797 1.775 1.774 1.775h20.451c.977 0 1.775-.798 1.775-1.775v-20.451c0-.977-.798-1.774-1.775-1.774zm-14.451 20.451h-3.689v-11.451h3.689v11.451zm-1.844-13.098c-1.184 0-2.146-.963-2.146-2.146 0-1.184.963-2.146 2.146-2.146s2.146.962 2.146 2.146c0 1.183-.962 2.146-2.146 2.146zm13.839 13.098h-3.688v-5.569c0-1.328-.026-3.036-1.85-3.036-1.851 0-2.134 1.445-2.134 2.939v5.666h-3.689v-11.451h3.544v1.562h.049c.493-.935 1.696-1.918 3.49-1.918 3.732 0 4.421 2.456 4.421 5.644v6.163z" />
+                    </svg>
+                </a>
+
+                <!-- Twitter -->
+                <a href="https://twitter.com/infinitylbsl" target="_blank" style="margin:0 10px; color:white;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.719 0-4.924 2.205-4.924 4.924 0 .386.044.762.127 1.124-4.092-.205-7.725-2.166-10.157-5.144-.424.728-.666 1.574-.666 2.476 0 1.708.869 3.213 2.188 4.096-.807-.026-1.566-.247-2.228-.616v.062c0 2.385 1.698 4.374 3.951 4.827-.414.113-.849.173-1.296.173-.317 0-.626-.031-.928-.088.627 1.956 2.445 3.377 4.6 3.417-1.68 1.318-3.809 2.104-6.115 2.104-.397 0-.788-.023-1.175-.069 2.179 1.397 4.768 2.212 7.548 2.212 9.057 0 14.009-7.502 14.009-14.009 0-.213-.004-.425-.014-.636.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <p style="margin-top:20px;">© 2026 Infinity Laghubitta Bittiya Sanstha Ltd.</p>
+
+
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar-container").innerHTML = data;
+    });
+
+  function toggleMenu() {
+    const nav = document.getElementById("navMenu");
+    if (nav) nav.classList.toggle("active");
+  }
+</script>
+
+
+</body>
+
+</html>
