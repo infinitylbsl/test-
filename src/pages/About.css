@@ -1,0 +1,527 @@
+/* General Styling */
+.about-wrapper {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Hero Section */
+.about-hero {
+    /* background: linear-gradient(135deg, #004080 0%, #00a86b 100%); */
+    color: smokewhite;
+    padding:50px 10px;
+    text-align: center;
+}
+
+
+/* Navigation Bar */
+.about-nav {
+    display: flex;
+    justify-content: center;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.nav-btn {
+    padding: 20px 25px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    cursor: pointer;
+    color: #666;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-btn.active {
+    color: #004080;
+    border-bottom: 3px solid #004080;
+}
+
+.nav-btn:hover { color: #00a86b; }
+
+/* Content Area */
+.about-content-area {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.title { text-align: center; color: #004080; font-size: 2.2rem; margin-bottom: 10px; }
+.subtitle { text-align: center; color: #00a86b; margin-bottom: 40px; font-weight: 500; }
+
+/* Grids */
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; }
+
+/* Cards */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 4px solid #004080;
+}
+
+.card h3 { color: #004080; margin-bottom: 10px; }
+
+/* Member Styling */
+.img-holder {
+    width: 100px;
+    height: 100px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #888;
+    border: 2px solid #00a86b;
+}
+
+/* CEO Section */
+.ceo-flex {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.img-holder.large { width: 200px; height: 250px; border-radius: 10px; }
+
+/* Capital Ownership */
+.ownership-banner {
+    display: flex;
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.owner-part { padding: 15px; flex: 1; }
+.owner-part.blue { background: #004080; }
+.owner-part.green { background: #00a86b; }
+
+/* Animations */
+.animated {
+    animation: fadeInUp 0.4s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ceo-flex { flex-direction: column; text-align: center; }
+    .about-hero h1 { font-size: 2rem; }
+}
+
+/* Container for all goals */
+.goals-container {
+  display: flex;
+  flex-wrap: wrap;       /* allows items to wrap on smaller screens */
+  gap: 20px;             /* space between items */
+  justify-content: space-between; /* spread them evenly */
+  margin-top: 20px;
+}
+
+/* Individual goal boxes */
+.goal-item {
+  flex: 1 1 300px;       /* grow, shrink, minimum width 300px */
+  background-color: #f5f8fb;  /* light background for cards */
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Optional: bold headings inside each card */
+.goal-item strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #1e3a8a; /* primary blue from homepage colors */
+}
+
+
+/* Management Team Container */
+.management-team {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Row 1: The CEO / First Card */
+.management-team .card:first-child {
+    flex: 0 0 100%; /* Forces this card to take the full width of the row */
+    max-width: 450px; /* Keeps the card from becoming awkwardly wide */
+    margin-bottom: 20px; /* Space between the CEO and the next row */
+}
+
+/* Row 2: All other members */
+.management-team .card:not(:first-child) {
+    flex: 1 1 300px; /* Allows them to sit side-by-side */
+    max-width: 380px;
+}
+
+/* Refined Image Holder */
+.img-holder {
+    width: 110px;
+    height: 110px;
+    background: #e9ecef;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #004080;
+    border: 3px solid #00a86b;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .img-holder {
+    transform: scale(1.1);
+}
+
+/* Smooth Fade-in Animation */
+.animated {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.management-wrapper {
+    margin-top: 20px;
+}
+
+/* Main Layout */
+.management-layout {
+    display: flex;
+    gap: 40px;
+   flex-direction: column;
+    margin-top: 30px;
+}
+
+/* CEO Section (Left Column) */
+.ceo-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.ceo-section .card {
+    max-width: 320px;
+    width: 100%;
+}
+
+/* Team Section (Right Column Grid) */
+.team-section {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Improve spacing */
+.card.member {
+    padding: 25px;
+}
+
+/* Responsive */
+/* @media (max-width: 768px) {
+    .management-layout {
+        flex-direction: column;
+    }
+
+    .ceo-section {
+        margin-bottom: 20px;
+    }
+} */
+
+
+.profile-img{
+    width: 150px;
+    border-radius: 200px;
+   
+}
+
+.ceo-profile-img {
+   height:auto;
+    border-radius: 10px;
+    
+}
+
+
+
+
+/* 1. Remove any styling from the containers */
+.ceo-img-side, 
+.ceo-image {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/* 2. Style the image itself directly */
+.ceo-profile-img {
+   
+    height:auto;
+    width: auto;
+    border-radius: 10px; /* Optional: keeps corners slightly rounded */
+    
+}
+
+/* 3. Adjust the flex container */
+.ceo-flex {
+    
+    gap: 60px; /* Added gap so text isn't touching the photo */
+    align-items: stretch; /* Aligns photo and text to the top */
+    /* padding: 20px 0; */
+   
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .ceo-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+.KPK-img {
+        width: 150px;
+    border-radius: 200px;
+}
+
+
+.RB-img {
+        width: 150px;
+    border-radius: 200px;
+
+}
+
+.AS-img {
+    width: 150px;
+    border-radius: 200px;
+}
+
+
+
+
+
+
+.about-departments {
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    color: #1e3c72;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+}
+
+.department-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #1e3c72; /* Infinity Blue */
+    transition: 0.3s ease;
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.department-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1e3c72;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.department-card h2 img {
+    width: 30px;
+    height: 30px;
+}
+
+.member {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    padding-left: 10px;
+    border-left: 2px solid #00a86b; /* Growth Green */
+}
+
+.member strong {
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Reusing your global grid logic */
+.infinity-responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+
+
+
+.about-departments {
+    padding: 40px 0;
+}
+
+.infinity-responsive-grid {
+    
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.department-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #1e3c72;
+    
+}
+
+.department-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1e3c72;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.department-card h2 img { width: 30px; height: 30px; }
+
+.member {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    padding-left: 12px;
+    border-left: 3px solid #00a86b;
+}
+
+
+
+.support-container {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    color: #1a4a8c;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.department-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    border-top: 5px solid #1a4a8c;
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+}
+
+.department-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.department-card h2 img {
+    width: 35px;
+    height: 35px;
+}
+
+.member {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    padding-left: 5px;
+}
+
+.member strong {
+    color: #111;
+    font-size: 1.05rem;
+}
+
+.member:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .department-grid {
+        grid-template-columns: 1fr;
+    }
+}

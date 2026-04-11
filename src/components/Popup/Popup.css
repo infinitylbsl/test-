@@ -1,0 +1,108 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Slightly darker for better focus */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Higher z-index to ensure it beats all other elements */
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.popup-box {
+  background: white;
+  padding: 25px; /* Slightly more breathing room */
+  border-radius: 12px;
+  position: relative;
+  max-width: 800px; /* Increased slightly for a better landscape feel */
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transform: scale(0.8);
+  animation: scaleUp 0.3s forwards ease-out;
+}
+
+@keyframes scaleUp {
+  to { transform: scale(1); }
+}
+
+.close-button {
+  position: absolute;
+  top: -15px; /* Moved slightly outside the box for a modern look */
+  right: -15px;
+  background: #fff;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.close-button:hover {
+  background: #f0f0f0;
+  color: #000;
+}
+
+.popup-photo {
+  width: 100%;
+  height: auto;
+  max-height: 450px; /* Increased height limit */
+  border-radius: 8px;
+  margin-bottom: 20px;
+  /* THE FIX: 'contain' ensures the whole image is seen. No more cutting! */
+  object-fit: contain; 
+  background-color: #f9f9f9; /* Adds a light tint behind if image is transparent */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Optional: remove the border/shadow from photo if it has its own padding */
+.popup-photo-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.confirm-button {
+  margin-top: 10px;
+  background-color: #004a99; /* Infinity Blue */
+  color: white;
+  border: none;
+  padding: 12px 45px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.confirm-button:hover {
+  background-color: #003366;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .popup-box {
+    padding: 15px;
+  }
+  .close-button {
+    top: 5px;
+    right: 5px;
+    box-shadow: none;
+  }
+}

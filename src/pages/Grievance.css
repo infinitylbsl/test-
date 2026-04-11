@@ -1,0 +1,127 @@
+.grievance-container {
+    padding: 140px 20px 60px; /* Adjusting for Fixed Navbar + NoticeBar */
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grievance-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.grievance-header h1 {
+    color: #1e3c72;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.grievance-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.central-office-card {
+    background: #fff;
+    border-left: 5px solid #00a86b;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.central-office-card h2 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.central-office-card h3 {
+    color: #00a86b;
+    margin-bottom: 15px;
+}
+
+.nrb-portal-section {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.nrb-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: #1e3c72;
+    color: white !important;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nrb-btn:hover {
+    background: #00a86b;
+}
+
+/* Table Styling */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.grievance-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.grievance-table th {
+    background-color: #1e3c72;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.grievance-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+
+.grievance-table tr:hover {
+    background-color: #f1f8f5;
+}
+
+/* Mobile Responsive Table */
+@media screen and (max-width: 768px) {
+    .grievance-table thead { display: none; }
+    .grievance-table tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid #eee;
+    }
+    .grievance-table td {
+        display: block;
+        text-align: right;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    .grievance-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+        color: #1e3c72;
+    }
+}

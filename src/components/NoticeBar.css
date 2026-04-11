@@ -1,0 +1,72 @@
+.notice-bar-container {
+    background-color: green;
+    border-bottom: 1px solid white;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    
+    /* CRITICAL FIXES */
+    position: fixed;     /* Make the notice bar stay at the top too */
+    top: 80px;           /* Push it down exactly the height of your Navbar */
+    left: 0;
+    width: 100%;
+    z-index: 1500;       /* Lower than Navbar (2000) but higher than Slider */
+}
+
+.notice-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.notice-badge {
+    background-color:blue;
+    color: white;
+    padding: 0 20px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 1600;       /* Keep badge on top of scrolling text */
+    white-space: nowrap;
+    box-shadow: 10px 0 15px rgba(0,0,0,0.1);
+}
+
+.marquee-container {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.scrolling-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: flyer-move 40s linear infinite;
+    color: white;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+@keyframes flyer-move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 1100px) {
+    .notice-bar-container {
+        top: 80px; /* Stays below navbar even on mobile */
+    }
+}
+
+
+/* For Pages OTHER than Home */
+.branches-container, .about-container {
+    padding-top: 90px; /* Only needs to clear the 80px Navbar */
+}
+
+/* For the Home page ONLY */
+.home-container {
+    padding-top: 125px; /* Clears both Navbar (80px) and NoticeBar (45px) */
+}

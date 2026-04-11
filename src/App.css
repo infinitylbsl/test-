@@ -1,0 +1,104 @@
+/* 1. RESET & VARIABLES */
+:root {
+    --primary-blue: #1e3c72;
+    --accent-green: #00a86b;
+    --pure-white: #ffffff;
+    --bg-light: #f4f7f6;
+    --text-dark: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    background-color: var(--pure-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* 2. GLOBAL LAYOUT STRUCTURE */
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* The "Magic" padding that stops Navbar overlap on all pages */
+main, 
+.home-container, 
+.news-notice-container, 
+.content-view-container {
+    
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1; /* Pushes footer to bottom */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+   
+}
+
+/* 3. DESKTOP GRID DEFAULTS */
+.selection-grid, .grid-container, .branch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* 4. MOBILE RESPONSIVENESS (The Fix) */
+@media (max-width: 768px) {
+    /* Adjustment for the fixed header height on mobile */
+    main, 
+    .home-container, 
+    .news-notice-container, 
+    .content-view-container {
+        /* padding-top: 130px;  */
+        width: 95%; /* More width on small screens */
+    }
+
+    h1 { font-size: 1.8rem !important; }
+    h2 { font-size: 1.5rem !important; }
+
+    /* Force EVERYTHING into one column */
+    .selection-grid, 
+    .grid-container, 
+    .branch-grid,
+    .card-wrapper,
+    .home-services-grid { 
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important; 
+        gap: 20px;
+    }
+
+    /* Fix buttons that were hiding */
+    .view-btn, .action-btn, .nav-apply-btn {
+        width: 100% !important;
+        padding: 15px !important;
+        text-align: center;
+        min-height: 50px;
+    }
+
+    /* Navbar systematic fix: ensure menu doesn't float weirdly */
+    .nav-links-mobile {
+        width: 100%;
+        left: 0;
+        top: 60px; /* Adjust based on your actual navbar height */
+    }
+}
+
+/* 5. TABLET VIEW */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .selection-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}

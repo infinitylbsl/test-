@@ -1,0 +1,188 @@
+/* src/pages/Branches.css */
+
+.branch-container {
+    max-width: 1200px;
+    /* FIX: Top margin/padding to clear the Fixed Navbar (80px) + NoticeBar (40px) */
+    margin: 40px auto;
+    padding: 140px 60px 60px; 
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 12px;
+}
+
+.branch-container .title {
+    font-size: 2.2rem;
+    color: #1e3c72; /* Infinity Blue */
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Dropdown & Controls Styling */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.dropdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dropdown-wrapper label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.select-box {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    border: 2px solid #edf2f7;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    color: #333;
+    outline: none;
+    min-width: 280px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-box:focus {
+    border-color: #00a86b; /* Infinity Green */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 168, 107, 0.1);
+}
+
+.results-count {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    color: #1e3c72;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Table Styling */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #1e3c72;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 15px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+tr:hover {
+    background-color: #f0fff9; /* Light Green Tint */
+}
+
+/* Links & Badges */
+.contact-link, .email-link {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.contact-link { color: #555; }
+.contact-link:hover { color: #1e3c72; }
+
+.email-link { color: #00a86b; }
+.email-link:hover { text-decoration: underline; }
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: #eef2ff;
+    color: #1e3c72;
+    border: 1px solid #d1d9e6;
+    display: inline-block;
+}
+
+.no-data {
+    text-align: center; 
+    padding: 50px !important;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.pagination button {
+    padding: 8px 16px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.pagination button.active {
+    background-color: #00a86b;
+    color: white;
+    border-color: #00a86b;
+}
+
+.pagination button:hover:not(.active) {
+    background-color: #f1f5f9;
+    color: #1e3c72;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .branch-container {
+        margin: 10px;
+        padding: 120px 15px 40px; /* Reduced side padding */
+    }
+
+    .branch-container .title {
+        font-size: 1.6rem;
+    }
+
+    .select-box {
+        min-width: 100%;
+    }
+
+    .controls {
+        gap: 15px;
+    }
+
+    th, td {
+        padding: 12px 10px;
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.52383c5b.css",
+    "main.js": "/static/js/main.557465b2.js",
+    "static/media/photo4.jpg": "/static/media/photo4.083b0ae91e4121b4fd84.jpg",
+    "static/media/photo5.jpg": "/static/media/photo5.c3ead18d8ce5ff2bb52f.jpg",
+    "static/media/mbimg.png": "/static/media/mbimg.2ded4a8d57e030e223ad.png",
+    "static/media/photo3.jpg": "/static/media/photo3.3e9760ccfea87560e8cd.jpg",
+    "static/media/Popup.png": "/static/media/Popup.54bb71eb0f26b71ebfa3.png",
+    "static/media/img1.jpg": "/static/media/img1.478e8a8b92ff7b16d61d.jpg",
+    "static/media/img2.jpg": "/static/media/img2.38157dd8af04b43b5437.jpg",
+    "static/media/RB.png": "/static/media/RB.0db4686232ef9f66862e.png",
+    "static/media/kpk.png": "/static/media/kpk.eb6760e93bc17d09480b.png",
+    "static/media/Ime.png": "/static/media/Ime.03401ade9786e66284ee.png",
+    "static/media/prabhur.png": "/static/media/prabhur.d533834ce68b389ed13b.png",
+    "static/media/img4.jpeg": "/static/media/img4.6b1754a2ec5e53538d7f.jpeg",
+    "static/media/mbapp.jpg": "/static/media/mbapp.ed972ef2469ae8fcf69c.jpg",
+    "static/media/photo2.jpg": "/static/media/photo2.ad14197c95cb29307ab9.jpg",
+    "static/media/AS.jpg": "/static/media/AS.2cba84d6504948345030.jpg",
+    "static/media/photo1.jpg": "/static/media/photo1.49ce5d4d12c6a566d93a.jpg",
+    "static/media/ceo-sir.jpg": "/static/media/ceo-sir.e284cfc4300028031ece.jpg",
+    "static/media/cityr.jpg": "/static/media/cityr.abb7dca7e4e873ff9779.jpg",
+    "static/media/lbslmain.png": "/static/media/lbslmain.47281bd99191cb7b1b38.png",
+    "static/media/remittance.png": "/static/media/remittance.d32ff0dab52873d8b0e7.png",
+    "static/media/policy.png": "/static/media/policy.01ddf7fc879cd8c958eb.png",
+    "static/media/saving.png": "/static/media/saving.e8468209dcea43e37176.png",
+    "static/media/loan.png": "/static/media/loan.974bb493965a384ca882.png",
+    "index.html": "/index.html",
+    "main.52383c5b.css.map": "/static/css/main.52383c5b.css.map",
+    "main.557465b2.js.map": "/static/js/main.557465b2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52383c5b.css",
+    "static/js/main.557465b2.js"
+  ]
+}

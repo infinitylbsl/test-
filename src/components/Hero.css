@@ -1,0 +1,143 @@
+.hero-container {
+    /* Clears Navbar (80px) + NoticeBar (45px) */
+    margin-top: 125px; 
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+    /* Aspect ratio 16/7 is common for banking flyers. 
+       This ensures the image isn't cut off or stretched. */
+    aspect-ratio: 16 / 7; 
+}
+
+.hero-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+    /* Use 'contain' to see the WHOLE photo without stretching. 
+       We use a white background to keep it clean like NRB's site. */
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    /* Ensures it stretches to the full width and height of the parent */
+    width: 100%;
+    min-height: 100%; 
+    
+    /* Flexbox settings to center your text/buttons perfectly */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
+    
+    /* Stretching Effect: Padding gives the content space to breathe */
+    padding: 60px 20px;
+    
+    /* Optional: A very subtle gradient makes text easier to read on top of photos */
+    background: linear-gradient(
+        to bottom,
+      
+    );
+
+    /* Ensures the overlay behaves well with the background photo */
+    box-sizing: border-box; 
+}
+
+.hero-content {
+    color: #fff;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 1.8rem; /* Smaller, cleaner banking typography */
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color:white;
+    margin-bottom: 20px;
+}
+
+.hero-cta {
+    background-color: #00a86b; /* Infinity Green */
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 2px; /* Sharp corners for professional look */
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.hero-cta:hover {
+    background-color: #1e3c72;
+}
+
+/* Dots Navigation (NRB Style) */
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #00a86b;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-container { 
+        margin-top: 125px;
+        /* Steeper aspect ratio for mobile screens */
+        aspect-ratio: 16 / 10; 
+    }
+    
+    .hero-content {
+        display: none; /* Often best to hide slider text on mobile if image has info */
+    }
+
+    .slide {
+        /* Ensure the photo is seen totally on mobile */
+        background-size: contain;
+    }
+}

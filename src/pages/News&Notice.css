@@ -1,0 +1,110 @@
+.news-notice-container, .content-view-container {
+    padding: 160px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    min-height: 70vh;
+}
+
+.news-notice-header, .content-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.news-notice-header h1, .content-header h2 {
+    color: #1e3c72; /* Infinity Blue */
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.selection-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #eee;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.selection-card:hover {
+    transform: translateY(-10px);
+    border-color: #00a86b; /* Infinity Green */
+    box-shadow: 0 8px 25px rgba(0,168,107,0.15);
+}
+
+.card-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+
+.view-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #1e3c72;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.selection-card:hover .view-btn {
+    background: #00a86b;
+}
+
+/* List Item Styles */
+.content-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #1e3c72;
+}
+
+.item-info h3 { margin: 5px 0; color: #333; }
+.item-date { color: #888; font-size: 0.85rem; }
+
+.item-actions { display: flex; gap: 10px; }
+.action-btn {
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.action-btn.view { border: 1px solid #1e3c72; color: #1e3c72; }
+.action-btn.download { background: #00a86b; color: white; }
+
+
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #1e3c72; /* Infinity Blue */
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #f0f4f8;
+    transition: 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #00a86b; /* Infinity Green */
+    color: white;
+}
+
+/* Ensure the header text doesn't overlap on mobile */
+@media (max-width: 768px) {
+    .content-header h2 {
+        font-size: 1.8rem;
+        margin-top: 10px;
+    }
+}

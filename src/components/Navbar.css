@@ -1,0 +1,120 @@
+.navbar {
+    background: #ffffff;
+    height: 80px; /* Reduced height slightly for better mobile feel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    height: 55px; /* Scaled down for better fit */
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    padding: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1e3c72; 
+    font-weight: 600;
+    transition: 0.3s;
+    white-space: nowrap; /* Prevents text from wrapping on small screens */
+}
+
+.nav-links a:hover {
+    color: #00a86b; 
+}
+
+/* Mobile Menu Settings */
+.mobile-menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #1e3c72;
+    cursor: pointer;
+}
+
+/* --- MOBILE STYLES --- */
+@media (max-width: 1100px) {
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        /* This transforms the menu into a vertical list */
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Must match navbar height */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 10px 0;
+        gap: 0; /* Removing large gaps */
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        
+        /* Hidden by default, shown when "active" class is applied */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .nav-links.active {
+        max-height: 600px; /* Adjust based on number of links */
+    }
+
+    .nav-links li {
+        width: 100%;
+        padding: 0; /* Remove horizontal padding */
+        text-align: left;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 30px; /* finger-friendly tapping area */
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 1rem;
+    }
+
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Styling the Loan Apply button inside mobile menu */
+    .nav-apply-btn {
+        background-color: #1e3c72;
+        color: white !important;
+        margin: 10px 20px;
+        width: auto !important;
+        text-align: center !important;
+        border-radius: 8px;
+        padding: 12px !important;
+    }
+}

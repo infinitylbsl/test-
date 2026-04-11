@@ -1,0 +1,121 @@
+.career-page {
+    /* FIX: This pushes the content down so it's not hidden under the Navbar */
+    padding-top: 100px; 
+    background: #f4f7f6;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+.career-hero {
+    background: #1e3c72; /* Corporate Blue */
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+.career-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.career-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Styling for the Vacancy Card */
+.vacancy-portal-card {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-top: 6px solid #1e3c72; /* Blue Accent */
+}
+
+.vacancy-portal-card .badge {
+    background: #00a86b; /* Growth Green */
+    color: white;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.vacancy-portal-card h2 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.vacancy-portal-card p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.portal-button {
+    display: inline-block;
+    background: #1e3c72;
+    color: white !important; /* Ensure text stays white */
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3);
+}
+
+.portal-button:hover {
+    background: #00a86b; /* Changes to Green on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 168, 107, 0.4);
+}
+
+.no-vacancy {
+    background:yellowgreen;
+    padding: 60px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.no-vacancy .icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.alternative-text {
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: #777;
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+}
+
+.alternative-text strong {
+    color: #1e3c72;
+}
+
+/* Animations */
+.animated {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
