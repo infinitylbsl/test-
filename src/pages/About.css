@@ -90,16 +90,16 @@
 
 /* CEO Section */
 .ceo-flex {
-    display: flex;
-    gap: 30px;
+    display: grid;
+    gap: 40px;
     align-items: center;
     background: white;
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
-.img-holder.large { width: 200px; height: 250px; border-radius: 10px; }
+.img-holder.large { width: 200px; height: 150px; border-radius: 5px; }
 
 /* Capital Ownership */
 .ownership-banner {
@@ -226,12 +226,12 @@
 /* CEO Section (Left Column) */
 .ceo-section {
     flex: 1;
-    display: flex;
+    display: grid;
     justify-content: center;
 }
 
 .ceo-section .card {
-    max-width: 320px;
+    max-width: 450px;
     width: 100%;
 }
 
@@ -266,13 +266,16 @@
    
 }
 
+
+
 .ceo-profile-img {
-   height:auto;
-    border-radius: 10px;
     
+    height: 380px;
+    object-fit: cover;
+    border-radius: 16px;
+    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 
 
 /* 1. Remove any styling from the containers */
@@ -290,14 +293,7 @@
 
 
 
-/* 2. Style the image itself directly */
-.ceo-profile-img {
-   
-    height:auto;
-    width: auto;
-    border-radius: 10px; /* Optional: keeps corners slightly rounded */
-    
-}
+
 
 /* 3. Adjust the flex container */
 .ceo-flex {
@@ -305,7 +301,10 @@
     gap: 60px; /* Added gap so text isn't touching the photo */
     align-items: stretch; /* Aligns photo and text to the top */
     /* padding: 20px 0; */
-   
+   background-color: smokewhite;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+   color: rgb(0, 0, 0);
 }
 
 /* Mobile Responsive */
