@@ -1,0 +1,60 @@
+.lv-card {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 260px;
+    background: #ffffff;
+    border: 1px solid #0056b3;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 10000;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.lv-top-bar {
+    background-color: #0056b3; /* Deep Blue */
+    color: white;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.lv-close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.lv-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.lv-action-link {
+    color: #28a745; /* Green */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+    border: 1px solid #28a745;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.lv-action-link:hover {
+    background-color: #28a745;
+    color: white;
+}

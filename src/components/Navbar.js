@@ -28,7 +28,7 @@ const Navbar = () => {
                     <li><Link to="/gallery">Gallery</Link></li>
                     <li><Link to="/career">Career</Link></li>
                     
-                    <li><Link to="/loan-apply" className="nav-apply-btn">Loan Apply</Link></li>
+            
                     
                     {/* Mail link stays as an 'a' tag because it's an external protocol */}
                     <li><a href="mailto:info@infinitylbsl.com.np" className="nav-mail-icon">Mail</a></li>

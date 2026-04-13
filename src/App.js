@@ -14,14 +14,12 @@ import Contact from './components/Contact';
 import Career from './components/Career';
 import SupportTeam from './pages/SupportTeam';
 import Grievance from './pages/Grievance';
-import NewsNotices from './pages/News&Notice'; // Corrected import
+import NewsNotices from './pages/News&Notice';
 import ContentListView from './pages/ContentListView';
 import InterestRate from './components/InterestRate';
 
-
-
-
-// 1. IMPORT THE POPUP COMPONENT
+// 1. IMPORT THE NEW COMPONENT
+import LastVisited from './components/LastVisited';
 import Popup from './components/Popup/Popup';
 
 function ScrollToHandler() {
@@ -44,8 +42,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* 2. ADD THE POPUP COMPONENT HERE */}
         <Popup />
+
+        {/* 2. PLACE THE LAST VISITED TRACKER HERE */}
+        <LastVisited />
 
         <ScrollToHandler />
         <Navbar />
@@ -65,10 +65,8 @@ function App() {
           <Route path="/news" element={<ContentListView title="Latest News" type="News" />} />
           <Route path="/notices" element={<ContentListView title="Official Notices" type="Notice" />} />
           <Route path="/interest-rates" element={<InterestRate />} />
-
-
-
         </Routes>
+        
         <Footer />
       </div>
     </Router>
