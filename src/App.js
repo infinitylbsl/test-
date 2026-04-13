@@ -17,10 +17,49 @@ import Grievance from './pages/Grievance';
 import NewsNotices from './pages/News&Notice';
 import ContentListView from './pages/ContentListView';
 import InterestRate from './components/InterestRate';
+import PaymentPartner from './components/PaymentPartner';
 
 // 1. IMPORT THE NEW COMPONENT
 import LastVisited from './components/LastVisited';
 import Popup from './components/Popup/Popup';
+
+// Wrapper to handle the home-page-only logic
+function AppContent() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  return (
+    <div className="App">
+      <Popup />
+      <LastVisited />
+      <ScrollToHandler />
+      <Navbar />
+      <NoticeBar />
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/investor-relations" element={<Investor />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/branches" element={<Branches />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/support" element={<SupportTeam />} />
+        <Route path="/grievance" element={<Grievance />} />
+        <Route path="/news-notices" element={<NewsNotices />} />
+        <Route path="/news" element={<ContentListView title="Latest News" type="News" />} />
+        <Route path="/notices" element={<ContentListView title="Official Notices" type="Notice" />} />
+        <Route path="/interest-rates" element={<InterestRate />} />
+      </Routes>
+
+      {/* Show PaymentPartner ONLY on the home page */}
+      {isHomePage && <PaymentPartner />}
+      
+      <Footer />
+    </div>
+  );
+}
 
 function ScrollToHandler() {
   const { pathname, hash } = useLocation();
@@ -41,34 +80,7 @@ function ScrollToHandler() {
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Popup />
-
-        {/* 2. PLACE THE LAST VISITED TRACKER HERE */}
-        <LastVisited />
-
-        <ScrollToHandler />
-        <Navbar />
-        <NoticeBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/investor-relations" element={<Investor />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/branches" element={<Branches />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/support" element={<SupportTeam />} />
-          <Route path="/grievance" element={<Grievance />} />
-          <Route path="/news-notices" element={<NewsNotices />} />
-          <Route path="/news" element={<ContentListView title="Latest News" type="News" />} />
-          <Route path="/notices" element={<ContentListView title="Official Notices" type="Notice" />} />
-          <Route path="/interest-rates" element={<InterestRate />} />
-        </Routes>
-        
-        <Footer />
-      </div>
+      <AppContent />
     </Router>
   );
 }
