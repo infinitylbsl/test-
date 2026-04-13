@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
-import PageVisitCounter from './PageVisitCounter';
+
 
 const Footer = () => {
     return (
@@ -70,9 +70,10 @@ const Footer = () => {
                 </div>
             </div>
 
+
             <div className="footer-bottom">
     
-    <PageVisitCounter />
+    
 </div>
 
 

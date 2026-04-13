@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './LastVisited.css';
 
-// Move this OUTSIDE the component to fix the ESLint warning
 const routeNames = {
     '/': 'Home',
     '/about': 'About Us',
@@ -27,14 +26,17 @@ const LastVisited = () => {
         const savedData = localStorage.getItem('userLastVisit');
         const currentPath = location.pathname;
 
+        // 1. Check if we have data from a previous page
         if (savedData) {
             const parsedData = JSON.parse(savedData);
+            // Only prepare the popup data if we aren't currently on the saved path
             if (parsedData.path !== currentPath) {
                 setLastData(parsedData);
                 setIsVisible(true);
             }
         }
 
+        // 2. ALWAYS record the current page, so the NEXT time they go home, it's updated
         const visitDetails = {
             path: currentPath,
             title: routeNames[currentPath] || 'Previous Page',
@@ -43,9 +45,13 @@ const LastVisited = () => {
             })
         };
         localStorage.setItem('userLastVisit', JSON.stringify(visitDetails));
-    }, [location.pathname]); // No warning now!
+    }, [location.pathname]);
 
-    if (!isVisible || !lastData) return null;
+    // FIX: Only render the visual card if we are on the Home page ('/')
+    // If path is anything else (like /about), return null to hide it.
+    if (!isVisible || !lastData || location.pathname !== '/') {
+        return null;
+    }
 
     return (
         <div className="lv-card">

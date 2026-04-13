@@ -5,6 +5,7 @@ import './Hero.css';
 
 import Img1 from '../assets/img1.jpg';
 import Img2 from '../assets/img2.jpg';
+import Img3 from '../assets/img3.jpg';
 
 import Img4 from '../assets/img4.jpeg';
 
@@ -15,6 +16,7 @@ const Hero = () => {
     const slides = [
         { id: 1, url: Img1 },
         { id: 2, url: Img2 },
+        { id: 3, url: Img3 },
       
         { id: 4, url: Img4 },
       

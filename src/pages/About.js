@@ -5,6 +5,7 @@ import ceoImg from '../assets/ceo-sir.jpg';
 import kpkImg from '../assets/kpk.png';
 import RBImage from '../assets/RB.png';
 import AsImage from '../assets/AS.jpg';
+import SKGImage from '../assets/SKG.jpg';
 
 function About() {
     const [activeTab, setActiveTab] = useState('org');
@@ -210,7 +211,7 @@ function About() {
                                     <h4>Head Credit Department</h4>
                                 </div>
                                 <div className="card member">
-                                    <div className="img-holder">SKG</div>
+                                     <img src={SKGImage} alt="Subash Kumar Gupta" className="SKG-img" />
                                     <h3>Subash Kumar Gupta</h3>
                                     <h4>Head IT Department</h4>
                                 </div>
