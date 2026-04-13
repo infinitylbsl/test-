@@ -16,6 +16,10 @@ import SupportTeam from './pages/SupportTeam';
 import Grievance from './pages/Grievance';
 import NewsNotices from './pages/News&Notice'; // Corrected import
 import ContentListView from './pages/ContentListView';
+import InterestRate from './components/InterestRate';
+
+
+
 
 // 1. IMPORT THE POPUP COMPONENT
 import Popup from './components/Popup/Popup';
@@ -60,6 +64,10 @@ function App() {
           <Route path="/news-notices" element={<NewsNotices />} />
           <Route path="/news" element={<ContentListView title="Latest News" type="News" />} />
           <Route path="/notices" element={<ContentListView title="Official Notices" type="Notice" />} />
+          <Route path="/interest-rates" element={<InterestRate />} />
+
+
+
         </Routes>
         <Footer />
       </div>

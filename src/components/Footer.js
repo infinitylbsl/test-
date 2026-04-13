@@ -34,7 +34,7 @@ const Footer = () => {
                         <h3>Quick Links</h3>
                         <ul>
                             
-                            <li><Link to="/interest-rates">Interest Rates</Link></li>
+                            <Link to="/interest-rates">Interest Rates</Link>
                              <li><Link to="/interest-rates">Base Rates</Link></li>
                             <li><Link to="/career">Career</Link></li>
                             <li><Link to="/reports">Investor Relations</Link></li>
